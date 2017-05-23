@@ -121,9 +121,30 @@ if __name__=='__main__':
 	#test = SelectKBest(k=12)
 	#fit = test.fit(features, categories)
 	#features = fit.transform(features)
+	
+	#classification
+	#train_x,test_x,train_y,test_y=train_test_split(features,categories,test_size=0.25,random_state=42)
+	#print train_x
+	#test_x=np.array(test_x)
+	#test_y=np.array(test_y)
+	#print train_x[0]
+	#print (train_y6
+	#print(str(len(x_train))+'\t'+str(len(x_test))+'\t'+str(len(y_train))+'\t'+str(len(y_test)))
+	#clf=OneVsRestClassifier(svm.SVC(kernel='rbf',gamma=0.01,C=100,max_iter=-1,class_weight='balanced'))
 	clf=OneVsRestClassifier(svm.SVC(kernel='linear',gamma=0.001,C=100,max_iter=-1))
+	#clf=svm.SVR(
+	#clf=svm.LinearSVC(max_iter=-1,class_weight='balanced')
 	#clf=OneVsRestClassifier(RandomForestClassifier(n_estimators=450,class_weight='balanced',min_samples_split=4))
+	#clf=ExtraTreesClassifier(n_estimators=30)
+	#clf.fit(train_x,train_y)
 	scores=cross_val_score(clf,features,categories,cv=5)
+	#clf.decision_function(train_x)
+	#prediction=clf.predict(test_x)
+	#print prediction
+	#print test_y
+	#score=accuracy_score(test_y,prediction)
+	#print prediction
+	print max(scores)
 	print ("score: {:.2f}%".format(sum(scores)/len(scores)*100))
 
 	

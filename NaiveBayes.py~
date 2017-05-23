@@ -89,4 +89,4 @@ if __name__=='__main__':
 		print score
 		scores.append(score)
 
-print ("Score: {:.2f}".format(sum(scores[])/len(scores[])*100))
+print ("Score: {:.2f}".format(sum(scores[1:])/len(scores[1:])*100))
